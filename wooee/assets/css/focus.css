@@ -1,7 +1,0 @@
-/* Shop UX Toolkit - Keyboard-only focus rings (front end) */
-
-/* Hide ring when focus came from mouse/touch */
-:focus:not(:focus-visible) {
-  outline: none !important;
-  box-shadow: none !important;
-}
