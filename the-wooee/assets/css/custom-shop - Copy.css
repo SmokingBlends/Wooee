@@ -1,0 +1,10 @@
+/* Shop Page */
+.woocommerce ul.products { margin: 0 !important; padding: 0 !important; display: flex; flex-wrap: wrap; }
+.woocommerce ul.products li.product { margin-bottom: 10px !important; }
+.woocommerce-loop-product__title { margin-bottom: 5px !important; }
+.price { margin-bottom: 0 !important; }
+.category-title { margin-top: 0 !important; margin-bottom: 10px !important; text-align: left; font-size: 1.5em; }
+.content-area, .site-main { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+.category-section { margin: 0 0 15px 0; clear: both; }
+.category-section.first { margin-top: 90px; }
+.category-section.last { margin-bottom: 0; }
