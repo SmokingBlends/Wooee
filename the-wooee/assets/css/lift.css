@@ -1,0 +1,73 @@
+/* Small hover highlight on product & category boxes */
+
+/* Centers the caption text for PhotoSwipe gallery images */
+.pswp__caption__center {
+  text-align: center !important;
+}
+
+/* Sets base styles for product and category items, enabling smooth transitions for hover/focus effects */
+.products li.product,
+.products li.product-category {
+  position: relative; /* Ensures z-index works for layering and pseudo-elements */
+  transition: none; /* No direct transitions on the box itself, handled by pseudo-element */
+}
+
+/* Applies expanded outline effect via pseudo-element on hover and focus for devices with a mouse or precise pointer */
+@media (hover:hover) and (pointer:fine) {
+  .products li.product:has(.woocommerce-LoopProduct-link:hover, .button:hover, .added_to_cart:hover)::after,
+  .products li.product-category:has(a:hover)::after {
+    content: ''; /* Creates the pseudo-element */
+    position: absolute;
+    top: -6px; /* Offsets to make larger than the box */
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 12px; /* Slightly rounded corners for the expanded outline */
+    box-shadow: 0 0 34px rgba(0,0,0,.14), 0 0 10px rgba(0,0,0,.05); /* Even shadow, no vertical offset */
+    z-index: -1; /* Places outline behind the box */
+    opacity: 0; /* Hidden by default */
+    transition: opacity .18s ease; /* Smooth fade-in for the outline */
+  }
+
+  .products li.product:has(.woocommerce-LoopProduct-link:hover, .button:hover, .added_to_cart:hover)::after,
+  .products li.product-category:has(a:hover)::after {
+    opacity: 1; /* Shows the outline on hover */
+  }
+
+  .products li.product:focus-within::after,
+  .products li.product-category:focus-within::after {
+    content: ''; /* Creates the pseudo-element */
+    position: absolute;
+    top: -6px; /* Offsets to make larger than the box */
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 12px; /* Slightly rounded corners for the expanded outline */
+    box-shadow: 0 0 34px rgba(0,0,0,.14), 0 0 10px rgba(0,0,0,.05); /* Even shadow, no vertical offset */
+    z-index: -1; /* Places outline behind the box */
+    opacity: 1; /* Shows the outline on focus */
+    transition: opacity .18s ease; /* Smooth fade-in for the outline */
+  }
+}
+
+/* Disables transitions for users who prefer reduced motion, improving accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .products li.product::after,
+  .products li.product-category::after {
+    transition: none; /* Removes animations to respect user preference */
+  }
+}
+
+/* Ensures no outline effect on touch devices, relying on browser default focus styles */
+@media (hover: none) {
+  .products li.product:focus-within,
+  .products li.product-category:focus-within {
+    transform: none; /* Prevents any transform effect on touch devices */
+    /* Browser default focus styles (e.g., outline) will apply for accessibility */
+  }
+
+  .products li.product:focus-within::after,
+  .products li.product-category:focus-within::after {
+    content: none; /* Disables pseudo-element on touch devices */
+  }
+}

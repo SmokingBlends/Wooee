@@ -1,0 +1,40 @@
+/* In assets/css/wooee-lightbox-bg.css */
+
+.pswp__bg {
+    background: #ffffff !important;
+}
+
+/* Transparent top bar */
+.pswp__top-bar {
+    background-color: transparent !important;
+}
+
+/* Black counter text with stronger feathered white outline (layered) */
+.pswp__counter {
+    color: #000000 !important;
+    text-shadow: 0 0 4px #ffffff, 0 0 4px #ffffff, 0 0 4px #ffffff !important;
+}
+
+/* Black icons (invert) with stronger feathered white outline (layered) */
+.pswp__button,
+.pswp__button--close,
+.pswp__button--share,
+.pswp__button--fs,
+.pswp__button--zoom,
+.pswp__button--arrow--left,
+.pswp__button--arrow--right {
+    filter: invert(1) drop-shadow(0 0 4px #ffffff) drop-shadow(0 0 4px #ffffff) drop-shadow(0 0 4px #ffffff) !important;
+}
+
+/* Stronger targeting for icon colors */
+.pswp,
+.pswp--open,
+body .pswp.pswp--open {
+    --pswp-icon-color: #000000 !important;
+    --pswp-icon-color-secondary: #000000 !important;
+}
+
+/* Optional: remove icon shadows */
+.pswp__icn-shadow {
+    display: none !important;
+}
